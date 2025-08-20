@@ -83,7 +83,6 @@ form.addEventListener('submit', function(e) {
   };
 
   entries.push(data);
-
   sendToGoogleSheet(data);
   renderEntries();
   renderChart();
