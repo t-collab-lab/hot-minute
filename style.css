@@ -1,0 +1,80 @@
+/* Hot Minute Styles - Serene and Clean */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(160deg, #e8fafa, #f3f8fa 80%, #f7f7f7 100%);
+  color: #20404a;
+}
+
+header {
+  background: #ccefff;
+  color: #31638d;
+  padding: 1.5em 0 1em 0;
+  text-align: center;
+  border-bottom: 2px solid #a3e0e8;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2.7em;
+  letter-spacing: 0.03em;
+}
+.subtitle {
+  color: #62819e;
+  font-size: 1.1em;
+  margin-top: -0.6em;
+  margin-bottom: 0;
+}
+
+main {
+  max-width: 750px;
+  margin: 2.2em auto;
+  background: #fffefa;
+  border-radius: 18px;
+  box-shadow: 0 0 16px #d3f7fd9c;
+  padding: 2em 2.8em 2em 2.8em;
+}
+
+.form-section, .entries-section, .analysis-section {
+  margin-bottom: 2em;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.08em;
+  font-weight: 500;
+  color: #32657a;
+}
+
+input, select, textarea, button {
+  margin-top: 0.3em;
+  font-size: 1.06em;
+  padding: 0.45em 0.65em;
+  border-radius: 8px;
+  border: 1px solid #bde3e6;
+  background: #f6fcfc;
+  color: #20404a;
+  font-family: inherit;
+}
+select, input[type="date"], input[type="time"], input[type="number"], input[type="text"] {
+  width: 100%;
+}
+
+textarea {
+  min-height: 55px;
+  resize: vertical;
+}
+
+button {
+  background-color: #98efe3;
+  border: none;
+  color: #29545d;
+  font-weight: 600;
+  padding: 0.6em 1.4em;
+  margin-top: 0.7em;
+  letter-spacing: 0.04em;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+button:hover
