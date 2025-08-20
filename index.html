@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hot Minute</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>🔥 Hot Minute</h1>
+    <p class="subtitle">Track, analyze, and understand your hot flashes with serenity.</p>
+  </header>
+  <main>
+    <section class="form-section">
+      <h2>Log a Hot Flash</h2>
+      <form id="hotflashForm">
+        <label>Date
+          <input type="date" id="date" name="date" required />
+        </label>
+        <label>Time
+          <input type="time" id="time" name="time" required />
+        </label>
+        <label>AM/PM
+          <select id="ampm" name="ampm" required>
+            <option value="">Select</option>
+            <option>AM</option>
+            <option>PM</option>
+          </select>
+        </label>
+        <label>Duration (minutes)
+          <input type="number" id="duration" name="duration" step="0.1" min="0" />
+        </label>
+        <label>Intensity (1-10)
+          <input type="number" id="intensity" name="intensity" step="0.1" min="1" max="10"/>
+        </label>
+        <label>Estradiol Gel Used?
+          <input type="checkbox" id="estradiol" name="estradiol"/>
+        </label>
+        <label>Estradiol Dosage
+          <input type="text" id="estradiol_dosage" name="estradiol_dosage" placeholder="mg, ml, etc."/>
+        </label>
+        <label>Progesterone Used?
+          <input type="checkbox" id="progesterone" name="progesterone"/>
+        </label>
+        <label>Progesterone Dosage
+          <input type="text" id="progesterone_dosage" name="progesterone_dosage" placeholder="mg, etc."/>
+        </label>
+        <label>Activity at Time
+          <select id="activity" name="activity">
+            <option value="">Select activity</option>
+            <option>Working</option>
+            <option>Cleaning</option>
+            <option>Exercising</option>
+            <option>Relaxing</option>
+            <option>Cooking</option>
+            <option>Sleeping</option>
+            <option>Showering</option>
+            <option>Driving</option>
+            <option>Shopping</option>
+            <option>Restaurant</option>
+            <option>Socializing</option>
+            <option>Other</option>
+          </select>
+          <input type="text" id="activity_other" name="activity_other" style="display: none;" placeholder="Describe other activity"/>
+        </label>
+        <label>Stress Level (1-10)
+          <input type="number" id="stress" name="stress" step="0.1" min="1" max="10"/>
+        </label>
+        <label>Notes
+          <textarea id="notes" name="notes" placeholder="Anything else to note?"></textarea>
+        </label>
+        <button type="submit">Add Entry</button>
+      </form>
+    </section>
+    <section class="entries-section">
+      <h2>Logged Entries</h2>
+      <div id="entries"></div>
+      <button id="downloadBtn">Download Data/Charts</button>
+    </section>
+    <section class="analysis-section">
+      <h2>Analysis & Charts</h2>
+      <canvas id="chart" width="600" height="350"></canvas>
+      <div id="chartOptions">
+        <label>Chart Type:
+          <select id="chartType">
+            <option value="bar">Bar</option>
+            <option value="line">Line</option>
+            <option value="pie">Pie</option>
+          </select>
+        </label>
+        <label>View by:
+          <select id="analyzeBy">
+            <option value="timeOfDay">Time of Day</option>
+            <option value="intensity">Intensity</option>
+            <option value="duration">Duration</option>
+            <option value="medication">Medication Use</option>
+            <option value="activity">Activity</option>
+            <option value="stress">Stress Level</option>
+          </select>
+        </label>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Hot Minute &copy; 2025. Serene, personal tracking for your well-being.</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
