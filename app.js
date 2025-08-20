@@ -40,6 +40,16 @@ progesteroneCheckbox.addEventListener('change', function() {
 });
 
 let entries = [];
+function sendToGoogleSheet(data) {
+  fetch('https://script.google.com/macros/s/AKfycbxSyO9xgIxgE_Ni-BwK6_D89BUn8ki1tXV4qPnKoiiHAV_2iduFAC9ALXfjgmfgIvTi/exec', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  });
+}
 
 // Helper: Get flame size class from intensity (1-10)
 function getFlameSizeClass(intensity) {
@@ -74,6 +84,7 @@ form.addEventListener('submit', function(e) {
 
   entries.push(data);
   saveEntries();
+  sendToGoogleSheet(data);
   renderEntries();
   renderChart();
   form.reset();
