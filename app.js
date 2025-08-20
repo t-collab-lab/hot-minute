@@ -9,6 +9,35 @@ const analyzeBySelect = document.getElementById('analyzeBy');
 const chartCanvas = document.getElementById('chart');
 const activitySelect = document.getElementById('activity');
 const activityOther = document.getElementById('activity_other');
+const DEFAULT_ESTRADIOL_DOSAGE = 'Gel 0.06% (37.5gm pump)';
+const DEFAULT_PROGESTERONE_DOSAGE = 'Micro 100mg capsule (2)';
+// Get checkboxes and input fields for meds
+const estradiolCheckbox = document.getElementById('estradiol');
+const estradiolDosage = document.getElementById('estradiol_dosage');
+const progesteroneCheckbox = document.getElementById('progesterone');
+const progesteroneDosage = document.getElementById('progesterone_dosage');
+
+// Estradiol check logic
+estradiolCheckbox.addEventListener('change', function() {
+  if (this.checked) {
+    estradiolDosage.value = DEFAULT_ESTRADIOL_DOSAGE;
+    estradiolDosage.disabled = false;
+  } else {
+    estradiolDosage.value = '';
+    estradiolDosage.disabled = true;
+  }
+});
+
+// Progesterone check logic
+progesteroneCheckbox.addEventListener('change', function() {
+  if (this.checked) {
+    progesteroneDosage.value = DEFAULT_PROGESTERONE_DOSAGE;
+    progesteroneDosage.disabled = false;
+  } else {
+    progesteroneDosage.value = '';
+    progesteroneDosage.disabled = true;
+  }
+});
 
 let entries = [];
 
@@ -49,6 +78,9 @@ form.addEventListener('submit', function(e) {
   renderChart();
   form.reset();
   activityOther.style.display = 'none';
+  estradiolDosage.disabled = true;
+progesteroneDosage.disabled = true;
+
 });
 
 activitySelect.addEventListener('change', function() {
